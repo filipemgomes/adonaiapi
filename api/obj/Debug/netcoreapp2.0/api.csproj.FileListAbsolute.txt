@@ -1,0 +1,11 @@
+/Users/filipegomes/Documents/Projetos/adonai/api/bin/Debug/netcoreapp2.0/api.deps.json
+/Users/filipegomes/Documents/Projetos/adonai/api/bin/Debug/netcoreapp2.0/api.runtimeconfig.json
+/Users/filipegomes/Documents/Projetos/adonai/api/bin/Debug/netcoreapp2.0/api.runtimeconfig.dev.json
+/Users/filipegomes/Documents/Projetos/adonai/api/bin/Debug/netcoreapp2.0/api.dll
+/Users/filipegomes/Documents/Projetos/adonai/api/bin/Debug/netcoreapp2.0/api.pdb
+/Users/filipegomes/Documents/Projetos/adonai/api/obj/Debug/netcoreapp2.0/api.csproj.CoreCompileInputs.cache
+/Users/filipegomes/Documents/Projetos/adonai/api/obj/Debug/netcoreapp2.0/api.AssemblyInfoInputs.cache
+/Users/filipegomes/Documents/Projetos/adonai/api/obj/Debug/netcoreapp2.0/api.AssemblyInfo.cs
+/Users/filipegomes/Documents/Projetos/adonai/api/obj/Debug/netcoreapp2.0/api.dll
+/Users/filipegomes/Documents/Projetos/adonai/api/obj/Debug/netcoreapp2.0/api.pdb
+/Users/filipegomes/Documents/Projetos/adonai/api/obj/Debug/netcoreapp2.0/api.csprojResolveAssemblyReference.cache
