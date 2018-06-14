@@ -41,9 +41,7 @@ namespace api.Controllers
                 Data = "Cliente adicionado com sucesso!"
             };
         }
-
-        public IConfiguration Configuration { get; set; }
-
+        
         [Route("v1/leads")]
         [HttpGet]
         public ResultViewModel GetLeads()
