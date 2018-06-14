@@ -5,7 +5,8 @@ namespace api.Data
 {
     public class AdonaiDataContext : DbContext
     {
-        public AdonaiDataContext()
+        public AdonaiDataContext(DbContextOptions<AdonaiDataContext> options)
+            : base(options)
         {
 
         }

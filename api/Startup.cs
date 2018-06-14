@@ -29,6 +29,7 @@ namespace api
             Configuration = builder.Build();
 
             services.AddMvc();
+            services.AddEntityFrameworkSqlServer();
 
             services.AddDbContext<AdonaiDataContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
@@ -43,6 +44,7 @@ namespace api
                 app.UseDeveloperExceptionPage();
 
             app.UseMvc();
+            
         }
     }
 }
