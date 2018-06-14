@@ -35,6 +35,16 @@ namespace api.Controllers
 
             var consorcio = (ConsorcioEnum)model.Consorcio;
 
+            Lead lead = new Lead();
+            lead.Name = model.Name;
+            lead.Email = model.Email;
+            lead.PhoneNumber = model.PhoneNumber;
+            lead.CreateDate = DateTime.Now;
+            lead.Consorcio = consorcio.ToString();
+
+            _context.Lead.Add(lead);
+            _context.SaveChanges();
+
             return new ResultViewModel
             {
                 Success = true,
