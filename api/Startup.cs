@@ -36,7 +36,8 @@ namespace api
             services.AddEntityFrameworkSqlServer();
 
 
-            var tst = Configuration["ConnectionStrings:DefaultConnection"];
+            //var tst = Configuration["ConnectionStrings:DefaultConnection"];
+            var tst = Configuration.GetConnectionString("DefaultConnection");
 
             services.AddDbContext<AdonaiDataContext>(options =>
                 options.UseSqlServer(tst));
