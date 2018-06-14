@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using api.Data;
 using api.Models.Enums;
@@ -29,7 +30,7 @@ namespace api.Controllers
                 };
             }
 
-            var consorcio = (ConsorcioEnum)model.Consorcio;        
+            var consorcio = (ConsorcioEnum)model.Consorcio;
 
             return new ResultViewModel
             {
@@ -42,13 +43,24 @@ namespace api.Controllers
         [HttpGet]
         public ResultViewModel GetLeads()
         {
-            //var lead = _context.Lead.ToList();
-
-            return new ResultViewModel
+            try
             {
-                Success = true,
-                Data = "Lead 1"
-            };
+                var lead = _context.Lead.ToList();
+
+                return new ResultViewModel
+                {
+                    Success = true,
+                    Data = "Lead 1"
+                };
+            }
+            catch (Exception ex)
+            {
+                return new ResultViewModel
+                {
+                    Success = false,
+                    Data = "Erro + " + ex.Message
+                };
+            }
         }
     }
 }
