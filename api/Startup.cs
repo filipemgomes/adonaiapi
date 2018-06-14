@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using api.Controllers;
+using api.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -26,6 +29,11 @@ namespace api
             Configuration = builder.Build();
 
             services.AddMvc();
+
+            services.AddDbContext<AdonaiDataContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
+
+            services.AddScoped<LeadController, LeadController>();         
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
