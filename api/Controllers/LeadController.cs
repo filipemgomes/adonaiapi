@@ -29,6 +29,8 @@ namespace api.Controllers
             };
         }
 
+        [Route("v1/leads")]
+        [HttpGet]
         public ResultViewModel GetLeads()
         {
             return new ResultViewModel
