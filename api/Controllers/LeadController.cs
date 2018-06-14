@@ -1,3 +1,5 @@
+using System.Linq;
+using api.Data;
 using api.Models.Enums;
 using api.ViewModels;
 using api.ViewModels.LeadViewModels;
@@ -7,6 +9,13 @@ namespace api.Controllers
 {
     public class LeadController : Controller
     {
+        private readonly AdonaiDataContext _context;
+
+        public LeadController(AdonaiDataContext context)
+        {
+            _context = context;
+        }
+
         [Route("/v1/lead/register")]
         [HttpPost]
         public ResultViewModel Add([FromBody]CreateLeadViewModel model)
@@ -33,6 +42,9 @@ namespace api.Controllers
         [HttpGet]
         public ResultViewModel GetLeads()
         {
+
+            var lead = _context.Lead.ToList();
+
             return new ResultViewModel
             {
                 Success = true,
