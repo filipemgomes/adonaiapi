@@ -33,6 +33,7 @@ namespace api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddCors();
 
             services.AddDbContext<AdonaiDataContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -47,6 +48,11 @@ namespace api
                 app.UseDeveloperExceptionPage();
 
             app.UseMvc();
+            app.UseCors(builder => builder
+                .AllowAnyOrigin()
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowCredentials());
             
         }
     }
