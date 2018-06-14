@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Linq;
 using api.Data;
+using api.Models;
 using api.Models.Enums;
 using api.ViewModels;
 using api.ViewModels.LeadViewModels;
@@ -49,7 +50,15 @@ namespace api.Controllers
         {
             try
             {
-                var lead = _context.Lead.ToList();
+                var lead = new Lead();
+                lead.Name = "Filipe Gomes";
+                lead.Email = "gomes.developer@gmail.com";
+                lead.PhoneNumber = "11947436099";
+                lead.Consorcio = ConsorcioEnum.Imovel.ToString();
+                lead.CreateDate = DateTime.Now;
+                
+                _context.Lead.Add(lead);
+                _context.SaveChanges();
 
                 return new ResultViewModel
                 {
