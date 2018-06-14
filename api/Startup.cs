@@ -18,21 +18,28 @@ namespace api
     {
         public static IConfiguration Configuration { get; set; }
         
+        public Startup()
+        {
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .AddEnvironmentVariables();
+
+            Configuration = builder.Build();
+        }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json");
-
-            Configuration = builder.Build();
-
             services.AddMvc();
             services.AddEntityFrameworkSqlServer();
 
+
+            var tst = Configuration["ConnectionStrings:DefaultConnection"];
+
             services.AddDbContext<AdonaiDataContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
+                options.UseSqlServer(tst));
 
             services.AddScoped<LeadController, LeadController>();         
         }
