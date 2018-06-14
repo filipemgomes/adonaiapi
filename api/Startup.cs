@@ -17,7 +17,7 @@ namespace api
     public class Startup
     {
         public static IConfiguration Configuration { get; set; }
-        
+
         public Startup()
         {
             var builder = new ConfigurationBuilder()
@@ -38,7 +38,7 @@ namespace api
             services.AddDbContext<AdonaiDataContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddScoped<LeadController, LeadController>();         
+            services.AddScoped<LeadController, LeadController>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,13 +47,12 @@ namespace api
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
 
-            app.UseMvc();
             app.UseCors(builder => builder
-                .AllowAnyOrigin()
-                .AllowAnyHeader()
-                .AllowAnyMethod()
-                .AllowCredentials());
-            
+                            .AllowAnyOrigin()
+                            .AllowAnyHeader()
+                            .AllowAnyMethod()
+                            .AllowCredentials());
+            app.UseMvc();
         }
     }
 }
