@@ -1,3 +1,4 @@
+using api.ViewModels.LeadViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api.Controllers
@@ -6,7 +7,7 @@ namespace api.Controllers
     {
         [Route("/v1/lead/")]
         [HttpPost]
-        public void Add()
+        public void Add([FromBody]CreateLeadViewModel model)
         {
 
         }
