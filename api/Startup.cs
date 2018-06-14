@@ -32,7 +32,7 @@ namespace api
             services.AddEntityFrameworkSqlServer();
 
             services.AddDbContext<AdonaiDataContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
+                options.UseSqlServer("Server=tcp:fgsolucoes.database.windows.net,1433;Initial Catalog=fgsolucoes;Persist Security Info=False;User ID=fimagom;Password=Th3curexd@!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout="));
 
             services.AddScoped<LeadController, LeadController>();         
         }
