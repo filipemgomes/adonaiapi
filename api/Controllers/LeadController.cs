@@ -42,8 +42,7 @@ namespace api.Controllers
         [HttpGet]
         public ResultViewModel GetLeads()
         {
-
-            var lead = _context.Lead.ToList();
+            //var lead = _context.Lead.ToList();
 
             return new ResultViewModel
             {
