@@ -50,20 +50,12 @@ namespace api.Controllers
         {
             try
             {
-                var lead = new Lead();
-                lead.Name = "Filipe Gomes";
-                lead.Email = "gomes.developer@gmail.com";
-                lead.PhoneNumber = "11947436099";
-                lead.Consorcio = ConsorcioEnum.Imovel.ToString();
-                lead.CreateDate = DateTime.Now;
-                
-                _context.Lead.Add(lead);
-                _context.SaveChanges();
+                var leads = _context.Lead.ToList();                
 
                 return new ResultViewModel
                 {
                     Success = true,
-                    Data = "Lead 1"
+                    Data = leads
                 };
             }
             catch (Exception ex)
