@@ -35,12 +35,8 @@ namespace api
             services.AddMvc();
             services.AddEntityFrameworkSqlServer();
 
-
-            //var tst = Configuration["ConnectionStrings:DefaultConnection"];
-            var tst = Configuration.GetConnectionString("DefaultConnection");
-
             services.AddDbContext<AdonaiDataContext>(options =>
-                options.UseSqlServer(tst));
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<LeadController, LeadController>();         
         }

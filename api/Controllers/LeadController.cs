@@ -59,12 +59,6 @@ namespace api.Controllers
             }
             catch (Exception ex)
             {
-                var builder = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json");
-
-                Configuration = builder.Build();
-
                 return new ResultViewModel
                 {
                     Success = false,
