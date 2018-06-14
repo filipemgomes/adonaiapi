@@ -68,7 +68,7 @@ namespace api.Controllers
                 return new ResultViewModel
                 {
                     Success = false,
-                    Data = Configuration.GetConnectionString("defaultConnection").ToString()
+                    Data = ex.Message
                 };
             }
         }
