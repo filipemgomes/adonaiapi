@@ -10,9 +10,10 @@ using System;
 namespace api.Migrations
 {
     [DbContext(typeof(AdonaiDataContext))]
-    partial class AdonaiDataContextModelSnapshot : ModelSnapshot
+    [Migration("20180630202600_Teste")]
+    partial class Teste
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
